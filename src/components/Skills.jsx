@@ -8,6 +8,7 @@ import Skill from "./Skill"
 const Skills = ({anim}) => {
     const fadeIn = anim.fade(250, 700, 1, 0)
     const slideIn = anim.slide(250, 700, 0, -5, "rem")
+    const skillsSlide = anim.slide(1100, 1350, 15, -15, "%")
 
     const allSkills = {
         HTML: <FaHtml5 />,
@@ -27,15 +28,23 @@ const Skills = ({anim}) => {
                     <h3 className="selc-red" style={slideIn}><span className="txt-red selc-red">S</span>kills</h3>
                     <h6>&lt; /h3 &gt;</h6>
                 </div>
-                {
-                    Object.keys(allSkills).map((skill, index) => (
-                        <Skill 
-                            name={skill}
-                            icon={allSkills[skill]}
-                            key={index}
-                        />
-                    ))
-                }
+                <div className="skills-children" style={skillsSlide}>
+                    {
+                        Object.keys(allSkills).map((skill, index) => (
+                            <Skill 
+                                name={skill}
+                                icon={allSkills[skill]}
+                                upFade={
+                                    {
+                                        ...anim.scroll(1500 + index * 75, 1750 + index * 75, -10, 0, "rem"),
+                                        ...anim.fade(1500 + index * 75, 1750 + index * 75, 0, 1)
+                                    }
+                                }
+                                key={index}
+                            />
+                        ))
+                    }
+                </div>
             </div>
         </>
     )

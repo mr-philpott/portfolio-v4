@@ -1,7 +1,7 @@
-const Skill = ({icon, name}) => {
+const Skill = ({icon, name, upFade}) => {
     return (
         <>
-            <div className="skill">
+            <div className="skill" style={upFade}>
                 <div className="skill-icon">
                     {icon}
                 </div>

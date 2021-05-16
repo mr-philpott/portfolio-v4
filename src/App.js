@@ -17,26 +17,57 @@ function App() {
         slide: (start, end, amt, inital, units, callback=undefined) => {
             if (scroll >= start && scroll <= end) {
                 return {
-                    transform: `translate(${((1 - (end - scroll) / end)) * (amt - inital) + inital}${units})`
+                    transform: `translateX(${((1 - ((end - scroll) / (end - start))) * (amt - inital)) + inital}${units})`
                 }
             } else if (callback) {
                 return callback
             } else {
+                if (scroll <= start) {
+                    return {
+                        transform: `translateX(${inital}${units})`
+                    }
+                } else {
+                    return {
+                        transform: `translateX(${amt}${units})`
+                    }
+                }
+            }
+        },
+        scroll: (start, end, amt, inital, units, callback=undefined) => {
+            if (scroll >= start && scroll <= end) {
                 return {
-                    transform: `translate(${amt}${units})`
+                    transform: `translateY(${(1 - ((end - scroll) / (end - start))) * (amt - inital) + inital}${units})`
+                }
+            } else if (callback) {
+                return callback
+            } else {
+                if (scroll <= start) {
+                    return {
+                        transform: `translateY(${inital}${units})`
+                    }
+                } else {
+                    return {
+                        transform: `translateY(${amt}${units})`
+                    }
                 }
             }
         },
         fade: (start, end, amt, inital, callback=undefined) => {
             if (scroll >= start && scroll <= end) {
                 return {
-                    opacity: `${(inital + (amt - inital) * (1 - ((end - scroll) / end)))}`
+                    opacity: `${inital + (amt - inital) * (1 - ((end - scroll) / (end - start)))}`
                 }
             } else if (callback) {
                 return callback
             } else {
-                return {
-                    opacity: `${amt}`
+                if (scroll <= start) {
+                    return {
+                        opacity: `${inital}`
+                    }
+                } else {
+                    return {
+                        opacity: `${amt}`
+                    }
                 }
             }
         },
@@ -48,8 +79,14 @@ function App() {
             } else if (callback) {
                 return callback
             } else {
-                return {
-                    width: `${amt}${units}`
+                if (scroll <= start) {
+                    return {
+                        width: `${inital}${units}`
+                    }
+                } else {
+                    return {
+                        width: `${amt}${units}`
+                    }
                 }
             }
         }
@@ -83,6 +120,8 @@ function App() {
                 </article>
                 <h6>&lt; /main &gt;</h6>
             </main>
+
+            <div className="space"></div>
 
             
 
