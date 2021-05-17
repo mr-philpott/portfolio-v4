@@ -37,6 +37,14 @@
   background-color: #DB546199;
 }
 
+.selc-alt::-moz-selection {
+  background-color: #e1e1e199;
+}
+
+.selc-alt::selection {
+  background-color: #e1e1e199;
+}
+
 .txt-blue {
   color: #71B39B;
 }
@@ -607,24 +615,95 @@
   width: 6rem;
 }
 
-.App .resume .resume-children .contain-lettering {
-  width: 90%;
-  height: 15rem;
-  overflow: hidden;
+.App .resume .resume-children {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4.5rem;
+}
+
+.App .resume .resume-children > * {
+  padding: 1.5rem;
+  width: 65%;
+  height: 30rem;
+  color: #e1e1e1;
+  background-color: #515052;
+  font-family: "Roboto", sans-serif;
+}
+
+.App .resume .resume-children > *:nth-child(odd) {
+  -webkit-box-shadow: #71B39B 0.5rem 0.5rem;
+          box-shadow: #71B39B 0.5rem 0.5rem;
+}
+
+.App .resume .resume-children > *:nth-child(even) {
+  -webkit-box-shadow: #DB5461 0.5rem 0.5rem;
+          box-shadow: #DB5461 0.5rem 0.5rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.App .resume .resume-children > * h6 {
+  color: #19191b;
+}
+
+.App .resume .resume-children > * [class*=title] {
+  height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1.5rem;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #e1e1e1;
+  text-shadow: #5a5855 0.065rem 0.065rem;
+}
+
+.App .resume .resume-children > * [class*=title] h4 {
+  letter-spacing: 0.125rem;
+}
+
+.App .resume .resume-children > * [class*=title] span {
+  text-shadow: #FAF5F5 0.065rem 0.065rem;
+}
+
+.App .resume .resume-children > * [class*=info] {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.App .resume .resume-children .contain-lettering p {
-  font-family: "Roboto", sans-serif;
-  color: #515052;
+.App .resume .resume-children > * [class*=info] p {
+  display: inline;
+  text-indent: 3rem;
+  padding: 0 2.5rem;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.0325rem;
+}
+
+.App .resume .resume-children > * [class*=info] h6:nth-of-type(2) {
+  text-align: right;
+}
+
+.App .resume .resume-children > * [class*=info] span {
+  text-indent: 0;
+  padding: 0 0.25rem;
 }
 
 .App .divider-container {

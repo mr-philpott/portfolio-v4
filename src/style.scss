@@ -13,6 +13,7 @@ $selc-b: #71B39B99;
 $hl-r: #DB5461;
 $selc-r: #DB546199;
 $hl-txt-shad: #FAF5F5;
+$slec-alt: #e1e1e199;
 
 // Fonts
 $f-rigid: 'Roboto',
@@ -45,6 +46,10 @@ cursive;
 
 .selc-red::selection {
     background-color: $selc-r;
+}
+
+.selc-alt::selection {
+    background-color: $slec-alt;
 }
 
 .txt-blue {
@@ -512,7 +517,77 @@ cursive;
             }
         }
 
-        .resume-children {}
+        .resume-children {
+            display: flex;
+            flex-direction: column;
+            gap: 4.5rem;
+
+            >* {
+                padding: 1.5rem;
+                width: 65%;
+                height: 30rem;
+                color: $bg-txt;
+                background-color: $bg-hl;
+                font-family: $f-rigid;
+
+                &:nth-child(odd) {
+                    box-shadow: $hl-b .5rem .5rem;
+                }
+
+                &:nth-child(even) {
+                    box-shadow: $hl-r .5rem .5rem;
+                    align-self: flex-end;
+                }
+
+                h6 {
+                    color: $bg;
+                }
+
+                [class*=title] {
+                    height: 20%;
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    font-size: 5rem;
+                    font-weight: 800;
+                    color: $bg-txt;
+                    text-shadow: $bg-txt-shad .065rem .065rem;
+
+                    h4 {
+                        letter-spacing: 0.125rem;
+                    }
+
+                    span {
+                        text-shadow: $hl-txt-shad .065rem .065rem;
+                    }
+                }
+
+                [class*=info] {
+                    height: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    p {
+                        display: inline;
+                        text-indent: 3rem;
+                        padding: 0 2.5rem;
+                        font-size: 1.75rem;
+                        line-height: 2.25rem;
+                        letter-spacing: 0.0325rem;
+                    }
+
+                    h6:nth-of-type(2) {
+                        text-align: right;
+                    }
+
+                    span {
+                        text-indent: 0;
+                        padding: 0 0.25rem;
+                    }
+                }
+            }
+        }
     }
 
     .divider-container {
