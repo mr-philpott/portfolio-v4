@@ -9,6 +9,11 @@
   scrollbar-width: none;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -627,6 +632,37 @@
 }
 
 .App .resume .resume-children > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .resume .resume-children > * .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35%;
+}
+
+.App .resume .resume-children > * .icons:nth-child(even) {
+  color: #71B39B;
+}
+
+.App .resume .resume-children > * .icons:nth-child(odd) {
+  color: #DB5461;
+}
+
+.App .resume .resume-children > * .icons * {
+  font-size: 15rem;
+}
+
+.App .resume .resume-children > * .card {
   padding: 1.5rem;
   width: 65%;
   height: 30rem;
@@ -635,23 +671,21 @@
   font-family: "Roboto", sans-serif;
 }
 
-.App .resume .resume-children > *:nth-child(odd) {
+.App .resume .resume-children > * .card:nth-child(odd) {
   -webkit-box-shadow: #71B39B 0.5rem 0.5rem;
           box-shadow: #71B39B 0.5rem 0.5rem;
 }
 
-.App .resume .resume-children > *:nth-child(even) {
+.App .resume .resume-children > * .card:nth-child(even) {
   -webkit-box-shadow: #DB5461 0.5rem 0.5rem;
           box-shadow: #DB5461 0.5rem 0.5rem;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
-.App .resume .resume-children > * h6 {
+.App .resume .resume-children > * .card h6 {
   color: #19191b;
 }
 
-.App .resume .resume-children > * [class*=title] {
+.App .resume .resume-children > * .card [class*=title] {
   height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -666,15 +700,15 @@
   text-shadow: #5a5855 0.065rem 0.065rem;
 }
 
-.App .resume .resume-children > * [class*=title] h4 {
+.App .resume .resume-children > * .card [class*=title] h4 {
   letter-spacing: 0.125rem;
 }
 
-.App .resume .resume-children > * [class*=title] span {
+.App .resume .resume-children > * .card [class*=title] span {
   text-shadow: #FAF5F5 0.065rem 0.065rem;
 }
 
-.App .resume .resume-children > * [class*=info] {
+.App .resume .resume-children > * .card [class*=info] {
   height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -683,13 +717,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 2rem;
 }
 
-.App .resume .resume-children > * [class*=info] p {
-  display: inline;
+.App .resume .resume-children > * .card [class*=info] p {
   text-indent: 3rem;
   padding: 0 2.5rem;
   font-size: 1.75rem;
@@ -697,13 +728,43 @@
   letter-spacing: 0.0325rem;
 }
 
-.App .resume .resume-children > * [class*=info] h6:nth-of-type(2) {
-  text-align: right;
-}
-
-.App .resume .resume-children > * [class*=info] span {
+.App .resume .resume-children > * .card [class*=info] p span {
   text-indent: 0;
   padding: 0 0.25rem;
+}
+
+.App .resume .resume-children > * .card [class*=info] ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .25rem;
+}
+
+.App .resume .resume-children > * .card [class*=info] ul li {
+  padding: 0 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.0325rem;
+}
+
+.App .resume .resume-children > * .card [class*=info] ul li span {
+  padding: 0 0.125rem;
+  margin: 0 -1.25rem;
+}
+
+.App .resume .resume-children > * .card [class*=info] h6:nth-of-type(2) {
+  text-align: right;
 }
 
 .App .divider-container {

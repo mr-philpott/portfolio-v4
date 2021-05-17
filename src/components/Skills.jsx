@@ -8,7 +8,7 @@ import Skill from "./Skill"
 const Skills = ({anim}) => {
     const fadeIn = anim.fade(250, 700, 1, 0)
     const slideIn = anim.slide(250, 700, 0, -5, "rem")
-    const skillsSlide = anim.slide(1100, 1350, 15, -15, "%")
+    const skillsSlide = anim.slide(1250, 1500, 15, -15, "%")
     const growText = anim.grow(600, 1000, 100, 0, "%")
 
     const skills = {

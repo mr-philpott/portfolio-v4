@@ -91,11 +91,37 @@ function App() {
                     }
                 }
             }
+        },
+        spin: (start, end, amt, inital, units, callback=undefined) => {
+            if (scroll >= start && scroll <= end) {
+                return {
+                    transform: `rotateZ(${inital + ((amt - inital) * (1 - ((end - scroll) / (end - start))))}${units})`
+                }
+            } else if (callback) {
+                return callback
+            } else {
+                if (scroll <= start) {
+                    return {
+                        transform: `rotateZ(${inital}${units})`
+                    }
+                } else {
+                    return {
+                        transform: `rotateZ(${amt}${units})`
+                    }
+                }
+            }
         }
     }
 
     return (
-        <div className="App">
+        <div className="App"
+            onContextMenu={
+                (e) => {
+                    e.preventDefault();
+                    console.log(scroll)
+                }    
+            }
+        >
             <h6>&lt; body &gt;</h6>
             <div className="opening">
                 <Nav />
@@ -142,6 +168,9 @@ function App() {
                         />
                         <h6>&lt; /section &gt;</h6>
                     </section>
+                    <Divider 
+                        grow={scrollAnimations.grow(5000, 5625, 100, 0, "%")}
+                    />
                     <h6>&lt; /article &gt;</h6>
                 </article>
                 <h6>&lt; /main &gt;</h6>
