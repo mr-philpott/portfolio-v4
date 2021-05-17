@@ -58,7 +58,7 @@ const Projects = ({anim}) => {
                 <div className="projects-children">
                     {
                         [Object.keys(projects).slice(0, 3), Object.keys(projects).slice(3, 6)].map((set, setIndex) => (
-                            <div className="projects-children-row">
+                            <div className="projects-children-row" key={setIndex}>
                                 {
                                     set.map((proj, index) => (
                                         <Project 
@@ -66,7 +66,7 @@ const Projects = ({anim}) => {
                                             desc={projects[proj].text}
                                             thumbnail={projects[proj].thumbnail}
                                             link={projects[proj].link}
-                                            key={index}
+                                            key={index + setIndex * 3}
                                             fadeSlide={
                                                 setIndex === 0 ? {
                                                     ...anim.fade(1750 + index * 150, 2100 + index * 100, 1, 0),

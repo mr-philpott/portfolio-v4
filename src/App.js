@@ -4,6 +4,7 @@ import Scroll from "./components/Scroll"
 import Skills from "./components/Skills";
 import Divider from "./components/Divider";
 import Projects from "./components/Projects";
+import Resume from "./components/Resume";
 
 import React, { useState } from 'react'
 
@@ -136,7 +137,9 @@ function App() {
                     />
                     <section>
                         <h6>&lt; section &gt;</h6>
-                        
+                        <Resume 
+                            anim={scrollAnimations}
+                        />
                         <h6>&lt; /section &gt;</h6>
                     </section>
                     <h6>&lt; /article &gt;</h6>

@@ -466,6 +466,55 @@ cursive;
         }
     }
 
+    .resume {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        .resume-title {
+            padding: 0 2.5rem;
+
+            h3 {
+                padding: 0 3rem;
+                font-family: $f-rigid;
+                font-size: 10rem;
+                color: $bg-txt;
+                text-shadow: $bg-txt-shad .125rem .125rem;
+
+                span {
+                    text-shadow: $hl-txt-shad .125rem .125rem;
+                }
+            }
+
+            h6:nth-of-type(2) {
+                text-align: right;
+            }
+        }
+
+        .resume-desc {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            font-family: $f-rigid;
+            font-size: 2.5rem;
+            color: $bg-hl;
+            font-weight: 800;
+
+            p {
+                white-space: nowrap;
+                overflow-x: hidden;
+            }
+
+            h6 {
+                width: 6rem;
+            }
+        }
+
+        .resume-children {}
+    }
+
     .divider-container {
         padding: 3rem;
         display: flex;
