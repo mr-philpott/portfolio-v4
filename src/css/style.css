@@ -289,6 +289,14 @@
   text-align: right;
 }
 
+.App main article section {
+  padding: 0 2.5rem;
+}
+
+.App main article section > h6:nth-of-type(2) {
+  text-align: right;
+}
+
 .App .skills {
   height: 100vh;
   display: -webkit-box;
@@ -301,10 +309,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 3rem;
 }
 
 .App .skills .skills-title {
-  padding: 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .App .skills .skills-title h3 {
@@ -321,6 +330,32 @@
 
 .App .skills .skills-title h6:nth-of-type(2) {
   text-align: right;
+}
+
+.App .skills .skills-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  color: #515052;
+  font-weight: 800;
+}
+
+.App .skills .skills-desc p {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.App .skills .skills-desc h6 {
+  width: 6rem;
 }
 
 .App .skills .skills-children {
@@ -373,8 +408,158 @@
   color: #e1e1e1;
 }
 
+.App .projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.App .projects .projects-title {
+  padding: 0 2.5rem;
+}
+
+.App .projects .projects-title h3 {
+  padding: 0 3rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 10rem;
+  color: #e1e1e1;
+  text-shadow: #5a5855 0.125rem 0.125rem;
+}
+
+.App .projects .projects-title h3 span {
+  text-shadow: #FAF5F5 0.125rem 0.125rem;
+}
+
+.App .projects .projects-title h6:nth-of-type(2) {
+  text-align: right;
+}
+
+.App .projects .projects-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  color: #515052;
+  font-weight: 800;
+}
+
+.App .projects .projects-desc p {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.App .projects .projects-desc h6 {
+  width: 6rem;
+}
+
+.App .projects .projects-children {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+}
+
+.App .projects .projects-children .projects-children-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+}
+
+.App .projects .projects-children .projects-children-row .project {
+  width: calc(100% / 3);
+  height: 25rem;
+  background-color: #515052;
+  -webkit-box-shadow: #71B39B 0.25rem 0.25rem;
+          box-shadow: #71B39B 0.25rem 0.25rem;
+  -webkit-transition: -webkit-box-shadow .5s;
+  transition: -webkit-box-shadow .5s;
+  transition: box-shadow .5s;
+  transition: box-shadow .5s, -webkit-box-shadow .5s;
+  padding: 1rem;
+}
+
+.App .projects .projects-children .projects-children-row .project:hover {
+  -webkit-box-shadow: #DB5461 0.5rem 0.5rem;
+          box-shadow: #DB5461 0.5rem 0.5rem;
+}
+
+.App .projects .projects-children .projects-children-row .project:hover a .project-details .project-name {
+  color: #DB5461;
+}
+
+.App .projects .projects-children .projects-children-row .project:hover .project-name {
+  color: #DB5461;
+}
+
+.App .projects .projects-children .projects-children-row .project a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.App .projects .projects-children .projects-children-row .project a .project-thumbnail {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.App .projects .projects-children .projects-children-row .project a .project-thumbnail img {
+  width: 100%;
+}
+
+.App .projects .projects-children .projects-children-row .project a .project-details {
+  padding: .5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.App .projects .projects-children .projects-children-row .project a .project-details .project-name {
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #71B39B;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+.App .projects .projects-children .projects-children-row .project a .project-details .project-desc {
+  color: #e1e1e1;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+}
+
 .App .divider-container {
   padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.App .divider-container h6 {
+  width: 6rem;
 }
 
 .App .divider-container .divider {

@@ -252,6 +252,14 @@ cursive;
             >h6:nth-of-type(2) {
                 text-align: right;
             }
+
+            section {
+                padding: 0 2.5rem;
+
+                >h6:nth-of-type(2) {
+                    text-align: right;
+                }
+            }
         }
     }
 
@@ -260,9 +268,10 @@ cursive;
         display: flex;
         align-items: center;
         flex-direction: column;
+        gap: 3rem;
 
         .skills-title {
-            padding: 2.5rem;
+            padding: 0 2.5rem;
 
             h3 {
                 padding: 0 3rem;
@@ -280,6 +289,26 @@ cursive;
                 text-align: right;
             }
 
+        }
+
+        .skills-desc {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            font-family: $f-rigid;
+            font-size: 2.5rem;
+            color: $bg-hl;
+            font-weight: 800;
+
+            p {
+                white-space: nowrap;
+                overflow-x: hidden;
+            }
+
+            h6 {
+                width: 6rem;
+            }
         }
 
         .skills-children {
@@ -320,8 +349,132 @@ cursive;
         }
     }
 
+    .projects {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        .projects-title {
+            padding: 0 2.5rem;
+
+            h3 {
+                padding: 0 3rem;
+                font-family: $f-rigid;
+                font-size: 10rem;
+                color: $bg-txt;
+                text-shadow: $bg-txt-shad .125rem .125rem;
+
+                span {
+                    text-shadow: $hl-txt-shad .125rem .125rem;
+                }
+            }
+
+            h6:nth-of-type(2) {
+                text-align: right;
+            }
+        }
+
+        .projects-desc {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            font-family: $f-rigid;
+            font-size: 2.5rem;
+            color: $bg-hl;
+            font-weight: 800;
+
+            p {
+                white-space: nowrap;
+                overflow-x: hidden;
+            }
+
+            h6 {
+                width: 6rem;
+            }
+        }
+
+        .projects-children {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            .projects-children-row {
+                display: flex;
+                gap: 3rem;
+
+                .project {
+                    width: calc(100% / 3);
+                    height: 25rem;
+                    background-color: $bg-hl;
+                    box-shadow: $hl-b .25rem .25rem;
+                    transition: box-shadow .5s;
+                    padding: 1rem;
+
+                    &:hover {
+                        box-shadow: $hl-r .5rem .5rem;
+
+                        a {
+                            .project-details {
+                                .project-name {
+                                    color: $hl-r;
+                                }
+                            }
+                        }
+
+                        .project-name {
+                            color: $hl-r;
+                        }
+                    }
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+
+                        .project-thumbnail {
+                            width: 100%;
+                            height: 50%;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .project-details {
+                            padding: .5rem;
+                            font-family: $f-rigid;
+
+                            .project-name {
+                                font-weight: 800;
+                                font-size: 2.5rem;
+                                color: $hl-b;
+                                transition: color .5s;
+                            }
+
+                            .project-desc {
+                                color: $bg-txt;
+                                padding: 0 2rem;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .divider-container {
         padding: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        h6 {
+            width: 6rem;
+        }
 
         .divider {
             height: .5rem;

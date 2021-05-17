@@ -9,8 +9,9 @@ const Skills = ({anim}) => {
     const fadeIn = anim.fade(250, 700, 1, 0)
     const slideIn = anim.slide(250, 700, 0, -5, "rem")
     const skillsSlide = anim.slide(1100, 1350, 15, -15, "%")
+    const growText = anim.grow(600, 1000, 100, 0, "%")
 
-    const allSkills = {
+    const skills = {
         HTML: <FaHtml5 />,
         CSS: <FaCss3Alt />,
         JS: <FaJs />,
@@ -28,12 +29,17 @@ const Skills = ({anim}) => {
                     <h3 className="selc-red" style={slideIn}><span className="txt-red selc-red">S</span>kills</h3>
                     <h6>&lt; /h3 &gt;</h6>
                 </div>
+                <div className="skills-desc">
+                    <h6>&lt; p &gt;</h6>
+                    <p style={growText}>Some of the skills I have acquired over my years of learning</p>
+                    <h6>&lt; /p &gt;</h6>
+                </div>
                 <div className="skills-children" style={skillsSlide}>
                     {
-                        Object.keys(allSkills).map((skill, index) => (
+                        Object.keys(skills).map((skill, index) => (
                             <Skill 
                                 name={skill}
-                                icon={allSkills[skill]}
+                                icon={skills[skill]}
                                 upFade={
                                     {
                                         ...anim.scroll(1500 + index * 75, 1750 + index * 75, -10, 0, "rem"),
@@ -41,6 +47,7 @@ const Skills = ({anim}) => {
                                     }
                                 }
                                 key={index}
+                                index={index}
                             />
                         ))
                     }

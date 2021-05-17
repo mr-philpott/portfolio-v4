@@ -3,6 +3,7 @@ import Title from "./components/Title"
 import Scroll from "./components/Scroll"
 import Skills from "./components/Skills";
 import Divider from "./components/Divider";
+import Projects from "./components/Projects";
 
 import React, { useState } from 'react'
 
@@ -71,7 +72,7 @@ function App() {
                 }
             }
         },
-        growWidth: (start, end, amt, inital, units, callback=undefined) => {
+        grow: (start, end, amt, inital, units, callback=undefined) => {
             if (scroll >= start && scroll <= end) {
                 return {
                     width: `${inital + ((amt - inital) * (1 - ((end - scroll) / (end - start))))}${units}`
@@ -106,16 +107,38 @@ function App() {
             </div>
 
             <Divider 
-                anim={scrollAnimations}
+                grow={scrollAnimations.grow(75, 500, 100, 0, "%")}
             />
             
             <main>
                 <h6>&lt; main &gt;</h6>
                 <article>
                     <h6>&lt; article &gt;</h6>
-                    <Skills 
-                        anim={scrollAnimations}
+                    <section>
+                        <h6>&lt; section &gt;</h6>
+                        <Skills 
+                            anim={scrollAnimations}
+                        />
+                        <h6>&lt; /section &gt;</h6>
+                    </section>
+                    <Divider 
+                        grow={scrollAnimations.grow(1350, 1775, 100, 0, "%")}
                     />
+                    <section>
+                        <h6>&lt; section &gt;</h6>
+                        <Projects 
+                            anim={scrollAnimations}
+                        />
+                        <h6>&lt; /section &gt;</h6>
+                    </section>
+                    <Divider 
+                        grow={scrollAnimations.grow(2800, 3425, 100, 0, "%")}
+                    />
+                    <section>
+                        <h6>&lt; section &gt;</h6>
+                        
+                        <h6>&lt; /section &gt;</h6>
+                    </section>
                     <h6>&lt; /article &gt;</h6>
                 </article>
                 <h6>&lt; /main &gt;</h6>

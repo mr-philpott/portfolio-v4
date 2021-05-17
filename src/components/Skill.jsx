@@ -1,4 +1,4 @@
-const Skill = ({icon, name, upFade}) => {
+const Skill = ({icon, name, upFade, index}) => {
     return (
         <>
             <div className="skill" style={upFade}>
@@ -6,7 +6,7 @@ const Skill = ({icon, name, upFade}) => {
                     {icon}
                 </div>
                 <div className="skill-name">
-                    <p>{name}</p>
+                    <p className={index % 2 ? "selc-red" : "selc-blue"}>{name}</p>
                 </div>
             </div>
         </>

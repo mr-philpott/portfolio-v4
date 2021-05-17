@@ -1,8 +1,9 @@
-const Divider = ({anim}) => {
+const Divider = ({grow}) => {
     return (
         <>
             <div className="divider-container">
-                <div className="divider" style={anim.growWidth(75, 500, 100, 0, "%")}></div>
+                <h6>&lt; hr/ &gt;</h6>
+                <div className="divider" style={grow}></div>
             </div>
         </>
     )
