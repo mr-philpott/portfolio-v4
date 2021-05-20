@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import Nav from "./components/Nav";
 import Title from "./components/Title"
 import Scroll from "./components/Scroll"
@@ -5,8 +7,7 @@ import Skills from "./components/Skills";
 import Divider from "./components/Divider";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
-
-import React, { useState } from 'react'
+import Contact from "./components/Contact";
 
 function App() {
     const [scroll, setScroll] = useState(0)
@@ -171,15 +172,17 @@ function App() {
                     <Divider 
                         grow={scrollAnimations.grow(5000, 5625, 100, 0, "%")}
                     />
+                    <section>
+                        <h6>&lt; section &gt;</h6>
+                        <Contact 
+                            anim={scrollAnimations}
+                        />
+                        <h6>&lt; /section &gt;</h6>
+                    </section>
                     <h6>&lt; /article &gt;</h6>
                 </article>
                 <h6>&lt; /main &gt;</h6>
             </main>
-
-            <div className="space"></div>
-
-            
-
             <h6>&lt; /body &gt;</h6>
         </div>
     );

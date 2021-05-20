@@ -767,6 +767,77 @@ ol {
   text-align: right;
 }
 
+.App .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.App .contact .contact-title {
+  padding: 0 2.5rem;
+}
+
+.App .contact .contact-title h3 {
+  padding: 0 3rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 10rem;
+  color: #e1e1e1;
+  text-shadow: #5a5855 0.125rem 0.125rem;
+}
+
+.App .contact .contact-title h3 span {
+  text-shadow: #FAF5F5 0.125rem 0.125rem;
+}
+
+.App .contact .contact-title h6:nth-of-type(2) {
+  text-align: right;
+}
+
+.App .contact .contact-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  color: #515052;
+  font-weight: 800;
+}
+
+.App .contact .contact-desc p {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.App .contact .contact-desc h6 {
+  width: 6rem;
+}
+
+.App .contact .contact-children {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+}
+
 .App .divider-container {
   padding: 3rem;
   display: -webkit-box;
@@ -786,10 +857,6 @@ ol {
   height: .5rem;
   width: 0;
   background-color: #515052;
-}
-
-.space {
-  height: 100vh;
 }
 
 @-webkit-keyframes bounce {
