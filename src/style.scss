@@ -36,6 +36,14 @@ ol {
     list-style: none;
 }
 
+fieldset {
+    border: none;
+
+    legend {
+        display: none;
+    }
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -685,11 +693,25 @@ ol {
         }
 
         .contact-children {
+            margin-top: 5rem;
+            width: 100%;
+            font-family: $f-rigid;
+            color: $bg-txt;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2.5rem;
 
 
+            .phone {
+                width: max-content;
+                font-size: 5rem;
+            }
+
+            .email {
+                width: max-content;
+                margin: 0 0 0 7.5rem;
+                font-size: 5rem;
+            }
         }
     }
 

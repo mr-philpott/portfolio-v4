@@ -14,6 +14,14 @@ ol {
   list-style: none;
 }
 
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -828,6 +836,10 @@ ol {
 }
 
 .App .contact .contact-children {
+  margin-top: 5rem;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #e1e1e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -835,7 +847,22 @@ ol {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
+}
+
+.App .contact .contact-children .phone {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 5rem;
+}
+
+.App .contact .contact-children .email {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 0 0 7.5rem;
+  font-size: 5rem;
 }
 
 .App .divider-container {
